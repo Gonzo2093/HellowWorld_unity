@@ -6,7 +6,7 @@ public class CubeSpawner3 : MonoBehaviour
 {
     public GameObject cubePrefabVar;
     public List<GameObject> gameObjectList; // Будет хранить все кубики
-    public float scalingFactor = 0.95f; // Коэффициент изменения масштаба каждого кубика в каждом кадре
+    public float scalingFactor = 0.99f; // Коэффициент изменения масштаба каждого кубика в каждом кадре
     public int numCubes = 0; // Общееколичествокубиков
 
     // Используйте этот метод для инициализации
@@ -38,7 +38,7 @@ public class CubeSpawner3 : MonoBehaviour
             float scale = goTemp.transform.localScale.x;
             scale *= scalingFactor;
             goTemp.transform.localScale = Vector3.one * scale;
-            if (scale <= 0.1f)
+            if (scale <= 0.05f)
             { // Если масштаб меньше 0.1f...
                 removeList.Add(goTemp); // ...добавить кубик в removeList
             }
